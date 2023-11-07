@@ -37,19 +37,7 @@ export default class Board extends React.Component {
       }
       Dragula([...container]).on("drop", drag);
     };
-    this.dragulaDecorator = (componentBackingInstance) => {
-      var container = document.querySelectorAll(".Swimlane-dragColumn");
-      console.log(componentBackingInstance);
-      function drag(el, source) {
-        console.log("el:", el, "arget:", source);
-      }
-      Dragula([...container]);
-      Dragula([
-        this.swimlanes.backlog,
-        this.swimlanes.inProgress,
-        this.swimlanes.complete,
-      ]);
-    };
+
     this.swimlanes = {
       backlog: React.createRef(),
       inProgress: React.createRef(),
